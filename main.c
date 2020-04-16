@@ -23,10 +23,8 @@
 
 
 ISR(INT0_vect){	
-	
-	SEG_PORT=0x10;
-	_delay_ms(1000);
 	SEG_PORT=SEG_PORT+0x10;
+	_delay_ms(1000);
 	if(SEG_PORT == 0x90){ SEG_PORT=0x10;}
 }
 
@@ -41,6 +39,8 @@ int main(){
 
 	SEG_DDR|=HIGH_NIPPLE;
 	SEG_CONTROL_DDR|=(1<<E1)|(1<<E2);
+	
+	SEG_PORT=0x00;
 
 	while(1){
 		SEG_CONTROL|=(1<<E1)|(1<<E2);
