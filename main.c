@@ -26,7 +26,7 @@ ISR(INT0_vect){
 	
 	SEG_PORT=0x10;
 	_delay_ms(1000);
-	SEG_PORT=SEG_PORT+10;
+	SEG_PORT=SEG_PORT+0x10;
 	if(SEG_PORT == 0x90){ SEG_PORT=0x10;}
 }
 
